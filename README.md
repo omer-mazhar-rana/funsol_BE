@@ -81,7 +81,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `/user/preferences/`
 - **Method**: `POST`
-- **Description**: Add Preferences.
+- **Description**: This allows user to set his content preferences.
 - **Request Body**:
 
 ```json
@@ -134,9 +134,9 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 }
 ```
 
-- **URL**: `/user/videos/retrieve/<str:preference>/`
+- **URL**: `/user/videos/retrieve/`
 - **Method**: `GET`
-- **Description**: retrieve videos by preference.
+- **Description**: This enables serving user videos on chosen preferences
 - **Request Body**:
 
 ```json
@@ -147,7 +147,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `video-statistics/`
 - **Method**: `POST`
-- **Description**: add video stats for user.
+- **Description**: This enables to track video stats for user.
 - **Request Body**:
 
 ```json
@@ -159,7 +159,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `video-statistics/<int:video_id>/`
 - **Method**: `GET`
-- **Description**: get video statistics detail.
+- **Description**: This enables retrieval of all interactions for a video.
 - **Request Body**:
 
 ```json
@@ -168,7 +168,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `video-statistics/views/<int:video_id>/`
 - **Method**: `GET`
-- **Description**: get video view statistics
+- **Description**: returns video's view statistics
 - **Request Body**:
 
 ```json
@@ -177,7 +177,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `video-statistics/shares/<int:video_id>/`
 - **Method**: `GET`
-- **Description**: get video share statistics detail.
+- **Description**: return video's share statistics detail.
 - **Request Body**:
 
 ```json
@@ -186,7 +186,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `video-statistics/downloads/<int:video_id>/`
 - **Method**: `GET`
-- **Description**: get video downloads statistics detail.
+- **Description**: return video's downloads statistics detail.
 - **Request Body**:
 
 ```json
