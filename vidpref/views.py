@@ -116,6 +116,7 @@ class UserPreferenceView(APIView):
             return Response(
                 {"error": "No such record"}, status=status.HTTP_404_NOT_FOUND
             )
+        request.data["preference"] = request.data["preference"].capitalize()
         request.data["user"] = instance.user.id
         serializer = self.serializer_class(instance, data=request.data)
         if serializer.is_valid():
@@ -145,12 +146,19 @@ class VideoView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @method_decorator(cache_page(60 * 60 * 24))  # cache for 1 day
-    def get(self, request, preference):
+    def get(self, request):
         """
-        Retrieve videos by category.
+        Retrieve videos by user chosen categories.
         """
-        instance = Video.objects.filter(category=preference.capitalize())
-        serializer = self.serializer_class(instance, many=True)
+        user = request.user.id
+        preferences = Preferences.objects.filter(user=user).values_list(
+            "preference", flat=True
+        )
+
+        videos = Video.objects.filter(
+            category__in=[preference.capitalize() for preference in preferences]
+        )
+        serializer = self.serializer_class(videos, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
