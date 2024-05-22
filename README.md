@@ -11,8 +11,6 @@ Funsol_BE is a Django-based backend application for managing user preferences, v
   - [User Preferences](#user-preferences)
   - [Video Management](#video-management)
   - [Video Statistics](#video-statistics)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
