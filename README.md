@@ -101,7 +101,7 @@ After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 
 - **URL**: `/user/preferences/update/<record_id>/`
 - **Method**: `PUT`
-- **Description**: Retrieve all preferences of user.
+- **Description**: Update preference of user.
 - **Request Body**:
 
 ```json
