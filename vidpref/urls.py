@@ -14,7 +14,7 @@ urlpatterns = [
     # User related URLs *****
     path("login/", UserLoginView.as_view(), name="login-user"),  # user login
     path(
-        "preferences/", UserPreferenceView.as_view(), name="user-preferences"
+        "preferences/", UserPreferenceView.as_view(), name="add-user-preferences"
     ),  # user to use this to add preferences
     path(
         "preferences/retrieve/",
@@ -34,16 +34,16 @@ urlpatterns = [
     # Video related URLs *****
     path("videos/", VideoView.as_view(), name="add-video"),  # add a new video
     path(
-        "videos/retrieve/<str:preference>/",
+        "videos/retrieve/",
         VideoView.as_view(),
-        name="retrieve-video",
-    ),  # retrieve videos by preference
+        name="retrieve-videos-for-user",
+    ),  # retrieve videos for user based on his preferences
     # Video statistics related URLs *****
     path(
         "video-statistics/",
         VideoStatisticView.as_view(),
         name="add-video-statistics",
-    ),  # add Video stats
+    ),  # add video stats
     path(
         "video-statistics/<int:video_id>/",
         VideoStatisticView.as_view(),
