@@ -7,13 +7,10 @@ Funsol_BE is a Django-based backend application for managing user preferences, v
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-  - [User Registration](#user-registration)
   - [User Login](#user-login)
   - [User Preferences](#user-preferences)
   - [Video Management](#video-management)
   - [Video Statistics](#video-statistics)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -57,3 +54,104 @@ Funsol_BE is a Django-based backend application for managing user preferences, v
    ```bash
    python manage.py runserver
    ```
+
+### Usage
+
+```bash
+After setting up the project, you can access the API at http://127.0.0.1:8000/.
+```
+
+### User Login
+
+- **URL**: `/user/login/`
+- **Method**: `POST`
+- **Description**: Login a user.
+- **Request Body**:
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+### User Preferences
+
+- **URL**: `/user/preferences/`
+- **Method**: `POST`
+- **Description**: Add Preferences.
+- **Request Body**:
+
+```json
+{
+  "preferences": ["string1", "string2"]
+}
+```
+
+- **URL**: `/user/preferences/retrieve/`
+- **Method**: `GET`
+- **Description**: Retrieve all preferences of user.
+
+- **URL**: `/user/preferences/update/<record_id>/`
+- **Method**: `PUT`
+- **Description**: Retrieve all preferences of user.
+- **Request Body**:
+
+```json
+{
+  "preferences": "string"
+}
+```
+
+- **URL**: `/user/preferences/retrieve/<str:preference>/`
+- **Method**: `GET`
+- **Description**: Retrieve user selected preference.
+
+### Video Management
+
+- **URL**: `/user/videos/`
+- **Method**: `POST`
+- **Description**: Add Videos.
+- **Request Body**:
+
+```json
+{
+  "title": "string",
+  "category": "string",
+  "url": "url"
+}
+```
+
+- **URL**: `/user/videos/retrieve/<str:preference>/`
+- **Method**: `GET`
+- **Description**: retrieve videos by preference.
+
+### Video Statistics
+
+- **URL**: `video-statistics/`
+- **Method**: `POST`
+- **Description**: add video stats for user.
+- **Request Body**:
+
+```json
+{
+  "video": "number",
+  "interaction_type": "string"
+}
+```
+
+- **URL**: `video-statistics/<int:video_id>/`
+- **Method**: `GET`
+- **Description**: get video statistics detail.
+
+- **URL**: `video-statistics/views/<int:video_id>/`
+- **Method**: `GET`
+- **Description**: get video view statistics
+
+- **URL**: `video-statistics/shares/<int:video_id>/`
+- **Method**: `GET`
+- **Description**: get video share statistics detail.
+
+- **URL**: `video-statistics/downloads/<int:video_id>/`
+- **Method**: `GET`
+- **Description**: get video downloads statistics detail.
