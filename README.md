@@ -2,6 +2,12 @@
 
 Funsol_BE is a Django-based backend application for managing user preferences, videos, and video statistics. This repository contains the code for the API endpoints that handle user creation, login, preferences management, video management, and video statistics.
 
+```bash
+The project uses Redis to cache cache frequently accessed data. This enhances performance and reduces latency.
+The project implements indexing on key database models to optimize query performance and improve the efficiency of data retrieval operations.
+The project uses PostgreSQL because It is well suited for vertical and horizontal scaling. Thus providing a reliable and scalable solution for storing and retrieving data.
+```
+
 ## Table of Contents
 
 - [Installation](#installation)
