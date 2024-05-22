@@ -11,6 +11,8 @@ Funsol_BE is a Django-based backend application for managing user preferences, v
   - [User Preferences](#user-preferences)
   - [Video Management](#video-management)
   - [Video Statistics](#video-statistics)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -91,6 +93,11 @@ After setting up the project, you can access the API at http://127.0.0.1:8000/.
 - **URL**: `/user/preferences/retrieve/`
 - **Method**: `GET`
 - **Description**: Retrieve all preferences of user.
+- **Request Body**:
+
+```json
+{}
+```
 
 - **URL**: `/user/preferences/update/<record_id>/`
 - **Method**: `PUT`
@@ -143,15 +150,35 @@ After setting up the project, you can access the API at http://127.0.0.1:8000/.
 - **URL**: `video-statistics/<int:video_id>/`
 - **Method**: `GET`
 - **Description**: get video statistics detail.
+- **Request Body**:
+
+```json
+{}
+```
 
 - **URL**: `video-statistics/views/<int:video_id>/`
 - **Method**: `GET`
 - **Description**: get video view statistics
+- **Request Body**:
+
+```json
+{}
+```
 
 - **URL**: `video-statistics/shares/<int:video_id>/`
 - **Method**: `GET`
 - **Description**: get video share statistics detail.
+- **Request Body**:
+
+```json
+{}
+```
 
 - **URL**: `video-statistics/downloads/<int:video_id>/`
 - **Method**: `GET`
 - **Description**: get video downloads statistics detail.
+- **Request Body**:
+
+```json
+{}
+```
