@@ -1,6 +1,6 @@
 # Funsol_BE
 
-Funsol_BE is a Django-based backend application for managing user preferences, videos, and video statistics. This repository contains the code for the API endpoints that handle user registration, login, preferences management, video management, and video statistics.
+Funsol_BE is a Django-based backend application for managing user preferences, videos, and video statistics. This repository contains the code for the API endpoints that handle user creation, login, preferences management, video management, and video statistics.
 
 ## Table of Contents
 
@@ -58,8 +58,10 @@ Funsol_BE is a Django-based backend application for managing user preferences, v
 ### Usage
 
 ```bash
-After setting up the project, you can access the API at http://127.0.0.1:8000/.
+After setting up the project, you can access the APIs at http://127.0.0.1:8000/.
 ```
+
+### API Endpoints
 
 ### User Login
 
@@ -111,6 +113,11 @@ After setting up the project, you can access the API at http://127.0.0.1:8000/.
 - **URL**: `/user/preferences/retrieve/<str:preference>/`
 - **Method**: `GET`
 - **Description**: Retrieve user selected preference.
+- **Request Body**:
+
+```json
+{}
+```
 
 ### Video Management
 
@@ -130,6 +137,11 @@ After setting up the project, you can access the API at http://127.0.0.1:8000/.
 - **URL**: `/user/videos/retrieve/<str:preference>/`
 - **Method**: `GET`
 - **Description**: retrieve videos by preference.
+- **Request Body**:
+
+```json
+{}
+```
 
 ### Video Statistics
 
