@@ -60,6 +60,8 @@ The project uses PostgreSQL because It is well suited for vertical and horizonta
    ```
 4. **Apply Migrations**
    ```bash
+   python manage.py migrate auth
+   python manage.py migrate admin
    python manage.py migrate
    ```
 5. **Run the Development Server**
