@@ -31,7 +31,13 @@ The project uses PostgreSQL because It is well suited for vertical and horizonta
    ```bash
    docker-compose up --build
    ```
-3. **Create a Superuser**:
+3. **Apply Migrations**:
+   ```bash
+   docker-compose exec web python manage.py migrate auth
+   docker-compose exec web python manage.py migrate admin
+   docker-compose exec web python manage.py migrate
+   ```
+4. **Create a Superuser**:
    ```bash
    docker-compose exec web python manage.py createsuperuser
    ```
